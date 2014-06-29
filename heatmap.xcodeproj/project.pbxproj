@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F753D318195F2EAD00B9C419 /* TreemapView.m in Sources */ = {isa = PBXBuildFile; fileRef = F753D315195F2EAD00B9C419 /* TreemapView.m */; };
+		F753D319195F2EAD00B9C419 /* TreemapViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F753D317195F2EAD00B9C419 /* TreemapViewCell.m */; };
+		F753D31B195F2F0200B9C419 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F753D31A195F2F0200B9C419 /* data.plist */; };
+		F753D320195F725800B9C419 /* indicesPriceChgFlex.xml in Resources */ = {isa = PBXBuildFile; fileRef = F753D31F195F725800B9C419 /* indicesPriceChgFlex.xml */; };
 		F7CAC269195E50DB00A792A4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CAC268195E50DB00A792A4 /* Foundation.framework */; };
 		F7CAC26B195E50DB00A792A4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CAC26A195E50DB00A792A4 /* CoreGraphics.framework */; };
 		F7CAC26D195E50DB00A792A4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CAC26C195E50DB00A792A4 /* UIKit.framework */; };
@@ -35,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F753D314195F2EAD00B9C419 /* TreemapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreemapView.h; sourceTree = "<group>"; };
+		F753D315195F2EAD00B9C419 /* TreemapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreemapView.m; sourceTree = "<group>"; };
+		F753D316195F2EAD00B9C419 /* TreemapViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreemapViewCell.h; sourceTree = "<group>"; };
+		F753D317195F2EAD00B9C419 /* TreemapViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TreemapViewCell.m; sourceTree = "<group>"; };
+		F753D31A195F2F0200B9C419 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
+		F753D31F195F725800B9C419 /* indicesPriceChgFlex.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = indicesPriceChgFlex.xml; sourceTree = "<group>"; };
 		F7CAC265195E50DB00A792A4 /* heatmap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = heatmap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7CAC268195E50DB00A792A4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F7CAC26A195E50DB00A792A4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +91,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F753D313195F2EAD00B9C419 /* TreemapKit */ = {
+			isa = PBXGroup;
+			children = (
+				F753D314195F2EAD00B9C419 /* TreemapView.h */,
+				F753D315195F2EAD00B9C419 /* TreemapView.m */,
+				F753D316195F2EAD00B9C419 /* TreemapViewCell.h */,
+				F753D317195F2EAD00B9C419 /* TreemapViewCell.m */,
+			);
+			path = TreemapKit;
+			sourceTree = "<group>";
+		};
 		F7CAC25C195E50DA00A792A4 = {
 			isa = PBXGroup;
 			children = (
@@ -114,12 +135,13 @@
 		F7CAC26E195E50DB00A792A4 /* heatmap */ = {
 			isa = PBXGroup;
 			children = (
-				F7CAC277195E50DB00A792A4 /* HeatMapAppDelegate.h */,
-				F7CAC278195E50DB00A792A4 /* HeatMapAppDelegate.m */,
 				F7CAC27A195E50DB00A792A4 /* Main_iPhone.storyboard */,
+				F753D313195F2EAD00B9C419 /* TreemapKit */,
 				F7CAC27D195E50DB00A792A4 /* Main_iPad.storyboard */,
 				F7CAC280195E50DB00A792A4 /* HeatMapViewController.h */,
 				F7CAC281195E50DB00A792A4 /* HeatMapViewController.m */,
+				F753D31A195F2F0200B9C419 /* data.plist */,
+				F753D31F195F725800B9C419 /* indicesPriceChgFlex.xml */,
 				F7CAC283195E50DB00A792A4 /* Images.xcassets */,
 				F7CAC26F195E50DB00A792A4 /* Supporting Files */,
 			);
@@ -129,6 +151,8 @@
 		F7CAC26F195E50DB00A792A4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F7CAC277195E50DB00A792A4 /* HeatMapAppDelegate.h */,
+				F7CAC278195E50DB00A792A4 /* HeatMapAppDelegate.m */,
 				F7CAC270195E50DB00A792A4 /* heatmap-Info.plist */,
 				F7CAC271195E50DB00A792A4 /* InfoPlist.strings */,
 				F7CAC274195E50DB00A792A4 /* main.m */,
@@ -203,6 +227,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = tdameritrade;
 				TargetAttributes = {
+					F7CAC264195E50DA00A792A4 = {
+						DevelopmentTeam = YU4H46ZK2C;
+					};
 					F7CAC288195E50DB00A792A4 = {
 						TestTargetID = F7CAC264195E50DA00A792A4;
 					};
@@ -235,6 +262,8 @@
 				F7CAC27F195E50DB00A792A4 /* Main_iPad.storyboard in Resources */,
 				F7CAC284195E50DB00A792A4 /* Images.xcassets in Resources */,
 				F7CAC27C195E50DB00A792A4 /* Main_iPhone.storyboard in Resources */,
+				F753D320195F725800B9C419 /* indicesPriceChgFlex.xml in Resources */,
+				F753D31B195F2F0200B9C419 /* data.plist in Resources */,
 				F7CAC273195E50DB00A792A4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +284,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7CAC282195E50DB00A792A4 /* HeatMapViewController.m in Sources */,
+				F753D318195F2EAD00B9C419 /* TreemapView.m in Sources */,
 				F7CAC275195E50DB00A792A4 /* main.m in Sources */,
+				F753D319195F2EAD00B9C419 /* TreemapViewCell.m in Sources */,
 				F7CAC279195E50DB00A792A4 /* HeatMapAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,10 +422,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "heatmap/heatmap-Prefix.pch";
 				INFOPLIST_FILE = "heatmap/heatmap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -404,10 +438,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "heatmap/heatmap-Prefix.pch";
 				INFOPLIST_FILE = "heatmap/heatmap-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -471,6 +508,7 @@
 				F7CAC29C195E50DB00A792A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F7CAC29D195E50DB00A792A4 /* Build configuration list for PBXNativeTarget "heatmapTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +517,7 @@
 				F7CAC29F195E50DB00A792A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

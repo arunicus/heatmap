@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Hp0-0Y-LQg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Heat Map View Controller - HeatMap-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="HeatMapViewController" sceneMemberID="viewController">
@@ -15,11 +15,94 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wli-cO-x68">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a18-86-2Bg" customClass="TreemapView">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="Epc-DB-a7R"/>
+                                            <constraint firstAttribute="height" constant="750" id="szN-Li-O6A"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="a18-86-2Bg" firstAttribute="leading" secondItem="Wli-cO-x68" secondAttribute="leading" id="Lig-UD-Pe4"/>
+                                    <constraint firstAttribute="trailing" secondItem="a18-86-2Bg" secondAttribute="trailing" id="M3p-IT-ECc"/>
+                                    <constraint firstAttribute="bottom" secondItem="a18-86-2Bg" secondAttribute="bottom" id="UPr-W5-nl0"/>
+                                    <constraint firstItem="a18-86-2Bg" firstAttribute="top" secondItem="Wli-cO-x68" secondAttribute="top" id="rZk-1c-gMV"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Wli-cO-x68" secondAttribute="bottom" id="Ocx-lc-qe5"/>
+                            <constraint firstAttribute="trailing" secondItem="Wli-cO-x68" secondAttribute="trailing" id="b0h-K3-U3T"/>
+                            <constraint firstItem="Wli-cO-x68" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="wUP-XG-9oA"/>
+                            <constraint firstItem="Wli-cO-x68" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="z0u-Jh-fIw"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="HeatMap" id="2JX-A4-tRP"/>
+                    <connections>
+                        <outlet property="tree" destination="a18-86-2Bg" id="Ku0-eC-5QM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="768" y="-73"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ch0-zE-wzq">
+            <objects>
+                <viewController id="uym-XW-J43" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4EY-pb-KpJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="H3K-Nu-qEI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y6l-3q-yeV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kjq-GF-E2B">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="push" id="q13-Ex-tq4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jpf-8N-xEL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YSo-Hb-tkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="272" y="-73"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KGM-9b-uTZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hp0-0Y-LQg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZLh-sp-5Xv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="uym-XW-J43" kind="relationship" relationship="rootViewController" id="mLB-XG-Lf3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fg5-Kf-A3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="-73"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

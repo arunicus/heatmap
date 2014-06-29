@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<indices label="Indices" updated="06/28/14 07:00">
+  <node label="DOW JONES">
+    <node label="INDUSTRIALS">
+      <node label="MMM" weight="94013.19" price="143.69" company="3M COMPANY" value="-0.028" color="-0.028"/>
+      <node label="BA" weight="93734.5" price="128.54" company="BOEING COMPANY" value="0.405" color="0.405"/>
+      <node label="CAT" weight="68041.81" price="108.78" company="CATERPILLAR INC" value="0.239" color="0.239"/>
+      <node label="GE" weight="265033.6" price="26.43" company="GENERAL ELECTRIC CO" value="0.53" color="0.53"/>
+      <node label="UTX" weight="106872.5" price="116.58" company="UNITED TECHNOLOGIES CORP" value="0.712" color="0.712"/>
+    </node>
+    <node label="TELECOMMUNICATIONS">
+      <node label="T" weight="183777.8" price="35.41" company="AT&amp;T INC" value="0.424" color="0.424"/>
+      <node label="VZ" weight="204241.4" price="49.32" company="VERIZON COMMUNICATIONS" value="0.223" color="0.223"/>
+    </node>
+    <node label="FINANCIALS">
+      <node label="AXP" weight="100493.3" price="94.93" company="AMERICAN EXPRESS CO" value="0.664" color="0.664"/>
+      <node label="GS" weight="74580" price="166.78" company="GOLDMAN SACHS GROUP INC" value="-0.737" color="-0.737"/>
+      <node label="JPM" weight="217734.4" price="57.53" company="JPMORGAN CHASE &amp; CO" value="0.243" color="0.243"/>
+      <node label="TRV" weight="32634.54" price="93.92" company="TRAVELERS COS INC (THE)" value="-0.522" color="-0.522"/>
+    </node>
+    <node label="OIL &amp; GAS">
+      <node label="CVX" weight="248161.4" price="130.36" company="CHEVRON CORP" value="-0.43" color="-0.43"/>
+      <node label="XOM" weight="434633.3" price="101.21" company="EXXON MOBIL CORP" value="-0.81" color="-0.81"/>
+    </node>
+    <node label="TECHNOLOGY">
+      <node label="CSCO" weight="126530.3" price="24.7" company="CISCO SYSTEMS INC" value="0.202" color="0.202"/>
+      <node label="INTC" weight="153969.4" price="30.93" company="INTEL CORP" value="0.485" color="0.485"/>
+      <node label="IBM" weight="183923.8" price="181.71" company="INTL BUSINESS MACHINES" value="0.737" color="0.737"/>
+      <node label="MSFT" weight="349002.2" price="42.25" company="MICROSOFT CORP" value="1.254" color="1.254"/>
+    </node>
+    <node label="CONSUMER GOODS">
+      <node label="KO" weight="185432.6" price="42.19" company="COCA COLA CO" value="0.379" color="0.379"/>
+      <node label="NKE" weight="54421.09" price="77.68" company="NIKE INC" value="1.056" color="1.056"/>
+      <node label="PG" weight="213824.4" price="79.02" company="PROCTER &amp; GAMBLE CO" value="0.506" color="0.506"/>
+    </node>
+    <node label="BASIC MATERIALS">
+      <node label="DD" weight="60096.68" price="65.44" company="DU PONT E I DE NEMOURS &amp; CO" value="-3.454" color="-3.454"/>
+    </node>
+    <node label="CONSUMER SERVICES">
+      <node label="HD" weight="110954.7" price="81.13" company="HOME DEPOT INC" value="0.468" color="0.468"/>
+      <node label="MCD" weight="100284.8" price="101.46" company="MCDONALDS CORP" value="-0.049" color="-0.049"/>
+      <node label="WMT" weight="242866.2" price="75.34" company="WAL MART STORES INC" value="0.571" color="0.571"/>
+      <node label="DIS.D" weight="147726.3" price="85.3" company="WALT DISNEY CO (THE)" value="0.996" color="0.996"/>
+    </node>
+    <node label="HEALTH CARE">
+      <node label="JNJ" weight="297026.8" price="104.99" company="JOHNSON &amp; JOHNSON" value="-0.629" color="-0.629"/>
+      <node label="PFE" weight="189063.9" price="29.67" company="PFIZER INC" value="0.27" color="0.27"/>
+      <node label="UNH" weight="80348.56" price="82" company="UNITEDHEALTH GROUP INC" value="-0.354" color="-0.354"/>
+    </node>
+  </node>
+</indices>
