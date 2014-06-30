@@ -26,7 +26,7 @@
 //- (void)treemapView:(TreemapView *)treemapView touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event;
 //- (void)treemapView:(TreemapView *)treemapView touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 //- (void)treemapView:(TreemapView *)treemapView touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-//- (void)treemapView:(TreemapView *)treemapView tapped:(NSInteger)index;
+- (void)treemapView:(TreemapView *)treemapView tapped:(NSInteger)index;
 - (void)treemapView:(TreemapView *)treemapView updateCell:(TreemapViewCell *)cell forIndex:(NSInteger)index forKey:(NSString *)key forRect:(CGRect)rect;
 
 @end

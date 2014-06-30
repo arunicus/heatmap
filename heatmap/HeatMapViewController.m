@@ -13,7 +13,9 @@
 @property (weak, nonatomic) IBOutlet TreemapView *tree;
 @property (strong,nonatomic) NSMutableDictionary *childTree;
 @property (strong,nonatomic) NSMutableDictionary *parentTree;
+@property (strong,nonatomic) NSMutableDictionary *backUpMap;
 @property (strong,nonatomic) NSMutableDictionary *indicesTree;
+@property (nonatomic) int heatMapLevel;
 @end
 
 @implementation HeatMapViewController
@@ -33,22 +35,6 @@
 #pragma mark TreemapView data source
 
 - (NSMutableArray *)valuesForTreemapView:(TreemapView *)treemapView {
-	if (!fruits) {
-		NSBundle *bundle = [NSBundle mainBundle];
-		NSString *plistPath = [bundle pathForResource:@"data" ofType:@"plist"];
-		NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
-        
-		self.fruits = [[NSMutableArray alloc] initWithCapacity:array.count];
-		for (NSDictionary *dic in array) {
-			NSMutableDictionary *mDic = [NSMutableDictionary dictionaryWithDictionary:dic];
-			[fruits addObject:mDic];
-		}
-	}
-    
-	NSMutableArray *values = [NSMutableArray arrayWithCapacity:fruits.count];
-	for (NSDictionary *dic in fruits) {
-		[values addObject:[dic valueForKey:@"value"]];
-	}
     
     if(!taHeatMap){
         taHeatMap = [[NSMutableDictionary alloc] init];
@@ -60,7 +46,14 @@
         xmlParser.delegate = self;
         [xmlParser parse];
         taHeatMap = [taHeatMap valueForKey:@"children"];
-        NSLog(@" %@",taHeatMap);
+        self.backUpMap = [[NSMutableDictionary alloc] initWithDictionary:taHeatMap];
+        self.heatMapLevel = -1;
+    }else{
+        taHeatMap = [[NSMutableDictionary alloc] initWithDictionary:self.backUpMap];
+        if (self.heatMapLevel > -1) {
+            NSString *parentKey = taHeatMap.allKeys[self.heatMapLevel];
+            taHeatMap =[[taHeatMap valueForKey:parentKey] valueForKey:@"children"];
+        }
     }
     NSMutableArray *valuesMap = [NSMutableArray arrayWithCapacity:taHeatMap.count];
     for(NSString *dic in taHeatMap){
@@ -89,6 +82,7 @@
         [nodes addObject:dic];
         i++;
     }
+    NSLog(@" %@",nodes);
 
     return nodes;
 
@@ -121,13 +115,36 @@
             cell.backgroundColor = [UIColor colorWithRed:val green:0 blue:0 alpha:1];
         }
     }else{
-        cell.backgroundColor = [UIColor colorWithHue:(float)index / (fruits.count + 3)
-                                          saturation:1 brightness:0.75 alpha:alp];
+        if([[taHeatMap valueForKey:key] valueForKey:@"value"] ){
+            CGFloat val = [[[taHeatMap valueForKey:key] valueForKey:@"value"] floatValue];
+            if(val > 0){
+                cell.backgroundColor = [UIColor colorWithRed:0 green:val blue:0 alpha:1];
+            }else{
+                val = val* -1;
+                cell.backgroundColor = [UIColor colorWithRed:val green:0 blue:0 alpha:1];
+            }
+        }else{
+            cell.backgroundColor = [UIColor colorWithHue:(float)index / (fruits.count + 3)
+                                              saturation:1 brightness:0.75 alpha:alp];
+        }
     }
 	cell.textLabel.text = key;
 	cell.valueLabel.text = @"";
 }
 
+-(void)treemapView:(TreemapView *)treemapView tapped:(NSInteger)index{
+    if(self.heatMapLevel != index){
+        self.heatMapLevel = (int)index;
+        if(self.heatMapLevel > -1){
+            NSString *parentKey = taHeatMap.allKeys[self.heatMapLevel];
+            if([[taHeatMap valueForKey:parentKey] valueForKey:@"children"]){
+                [self.tree reloadData];
+            }
+        }else{
+             [self.tree reloadData];
+        }
+    }
+}
 
 
 -(void) parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict

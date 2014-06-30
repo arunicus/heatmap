@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B69D1046-6865-47C3-B8C0-85C6A970B72C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>heatmap</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B2868AC8-C283-4A43-8B21-DD2EB02CF695</key>
+		<string>https://github.com/arunvenkate/heatmap.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>heatmap.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B2868AC8-C283-4A43-8B21-DD2EB02CF695</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/arunvenkate/heatmap.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B2868AC8-C283-4A43-8B21-DD2EB02CF695</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B2868AC8-C283-4A43-8B21-DD2EB02CF695</string>
+			<key>IDESourceControlWCCName</key>
+			<string>heatmap</string>
+		</dict>
+	</array>
+</dict>
+</plist>

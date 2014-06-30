@@ -47,8 +47,16 @@
     }else{
         textLabel.frame = CGRectMake(0,0, self.frame.size.width, self.frame.size.height);
     }
+}
+
+
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    [super touchesEnded:touches withEvent:event];
     
-    //valueLabel.frame = CGRectMake(0, self.frame.size.height / 2 + 10, self.frame.size.width, self.frame.size.height);
+    if (delegate && [delegate respondsToSelector:@selector(treemapViewCell:tapped:)]) {
+        [delegate treemapViewCell:self tapped:index];
+    }
 }
 
 @end

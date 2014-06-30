@@ -12,14 +12,39 @@
     if ((self = [super initWithFrame:frame])) {
         initialized = NO;
     }
+
     return self;
+}
+
+- (void)handleSwipe:(UISwipeGestureRecognizer *)swipe {
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionLeft) {
+        NSLog(@"Left Swipe");
+        [self treemapViewCell:nil tapped:-1];
+    }
+    
+    if (swipe.direction == UISwipeGestureRecognizerDirectionRight) {
+        NSLog(@"Right Swipe");
+    }
+    
 }
 
 - (void)drawRect:(CGRect)rect {
     if (!initialized) {
         [self createNodes];
         initialized = YES;
+        UISwipeGestureRecognizer *swipeLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipe:)];
+        
+        // Setting the swipe direction.
+        [swipeLeft setDirection:UISwipeGestureRecognizerDirectionLeft];
+        [swipeRight setDirection:UISwipeGestureRecognizerDirectionRight];
+        
+        // Adding the swipe gesture on tree view
+        [self addGestureRecognizer:swipeLeft];
+        [self addGestureRecognizer:swipeRight];
     }
+    
 }
 
 - (NSArray *)getData {
@@ -171,6 +196,7 @@
     [self resizeNodes];
 }
 
+
 //#pragma mark -
 //#pragma mark TreemapViewCell delegate
 //
@@ -202,11 +228,11 @@
 //    }
 //}
 //
-//- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell tapped:(NSInteger)index {
-//    if (delegate && [delegate respondsToSelector:@selector(treemapView:tapped:)]) {
-//        [delegate treemapView:self tapped:index];
-//    }
-//}
+- (void)treemapViewCell:(TreemapViewCell *)treemapViewCell tapped:(NSInteger)index {
+    if (delegate && [delegate respondsToSelector:@selector(treemapView:tapped:)]) {
+        [delegate treemapView:self tapped:index];
+    }
+}
 
 //#pragma mark -
 //#pragma mark UIView
